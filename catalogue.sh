@@ -55,7 +55,7 @@ cd /app
 unzip /tmp/catalogue.zip &>>$LOG_FILE
 VALIDATE $? "Unzip Catalogue code"
 
-npm install 
+npm install &>>$LOG_FILE
 VALIDATE $? "Install npm"
 
 cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service
