@@ -66,6 +66,6 @@ cp $SCRIPT_DIR/dispatch.service /etc/systemd/system/dispatch.service &>>$LOG_FIL
 VALIDATE $? "moving dispatch file"
 
 systemctl daemon-reload &>>$LOG_FILE
-systemctl enable shipping &>>$LOG_FILE
-systemctl start shipping &>>$LOG_FILE
-VALIDATE $? "Start Shipping"
+systemctl enable dispatch &>>$LOG_FILE
+systemctl start dispatch &>>$LOG_FILE
+VALIDATE $? "Start Dispatch"
