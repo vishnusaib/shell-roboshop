@@ -54,7 +54,7 @@ cd /app &>>$LOG_FILE
 unzip /tmp/dispatch.zip &>>$LOG_FILE
 VALIDATE $? "Unzipping Dispatch code"
 
-
+rm -rf /app/*
 cd /app &>>$LOG_FILE
 go mod init dispatch &>>$LOG_FILE
 
