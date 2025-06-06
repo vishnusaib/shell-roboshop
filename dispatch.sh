@@ -49,7 +49,7 @@ fi
 mkdir -p /app
 VALIDATE $? "Created App Dir"
 
-curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch-v3.zip &>>$LOG_FILE
+curl -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch-v3.zip &>>$LOG_FILE
 cd /app &>>$LOG_FILE
 unzip /tmp/dispatch.zip &>>$LOG_FILE
 VALIDATE $? "Unzipping Dispatch code"
