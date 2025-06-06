@@ -50,12 +50,13 @@ mkdir -p /app
 VALIDATE $? "Created App Dir"
 
 curl -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch-v3.zip &>>$LOG_FILE
+
+rm -rf /app/*
 cd /app &>>$LOG_FILE
 unzip /tmp/dispatch.zip &>>$LOG_FILE
 VALIDATE $? "Unzipping Dispatch code"
 
-rm -rf /app/*
-cd /app &>>$LOG_FILE
+
 go mod init dispatch &>>$LOG_FILE
 
 go get &>>$LOG_FILE
