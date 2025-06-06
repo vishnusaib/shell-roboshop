@@ -61,7 +61,7 @@ VALIDATE $? "Unzipping Payment code"
 pip3 install -r requirements.txt &>>$LOG_FILE
 VALIDATE $? "Installing Python"
 
-cp $SCRIPT_DIR/payment.service /etc/systemd/system/payment.service
+cp $SCRIPT_DIR/payment.service /etc/systemd/system/payment.service &>>$LOG_FILE
 
 systemctl daemon-reload &>>$LOG_FILE
 systemctl enable payment &>>$LOG_FILE
