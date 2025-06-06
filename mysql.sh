@@ -21,7 +21,7 @@ else
 fi
 
 echo "Please enter root password"
-read -s MySQL_Root_Password
+read -s MYSQL_ROOT_PASSWORD
 # validate functions takes input as exit status, what command they tried to install
 VALIDATE(){
     if [ $1 -eq 0 ]
@@ -38,7 +38,7 @@ VALIDATE $? "mysql server in installing"
 
 systemctl enable mysql &>>$LOG_FILE
 systemctl start mysql
-VALIDATE $? "Start Catalogue"
+VALIDATE $? "Start MySQL"
 
-mysql_secure_installation --set-root-pass $MySQL_Root_Password &>>$LOG_FILE
+mysql_secure_installation --set-root-pass $MYSQL_ROOT_PASSWORD &>>$LOG_FILE
 VALIDATE $? "Setting up MySQL root password"
